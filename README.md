@@ -61,15 +61,14 @@ pip install beautifulsoup4 requests lxml
          product_description = soup.find("div",class_="a-expander-content a-expander-section-content a-section-expander-inner").text.strip()
          product_review_USA = soup.find("ul",id="cm-cr-dp-review-list").text.strip()
          product_review_Globe = soup.find("ul",id="cm-cr-global-review-list").text.strip()
-         #print(product_review_Globe)
+         
    ```        
 - **CSV Module**: Saves the extracted data into a structured CSV file. 
   ```py
-              with open("amazon_airpod_pro_max.csv",mode='w',newline='',encoding='utf-8') as file:
-                   writer =csv.writer(file)
-                   writer.writerow(["product_title","product_price","product_rating","product_bp","product_description","product_review_USA"])
-                   
-                   writer.writerow([product_title,product_price,product_rating,product_bp,product_description,product_review_USA])
+         with open("amazon_airpod_pro_max.csv",mode='w',newline='',encoding='utf-8') as file:
+              writer =csv.writer(file)
+              writer.writerow(["product_title","product_price","product_rating","product_bp","product_description","product_review_USA"])
+              writer.writerow([product_title,product_price,product_rating,product_bp,product_description,product_review_USA])
   ```  
 ## Important Notes
 - Amazon has strong anti-scraping mechanisms. If you receive a CAPTCHA page, consider:
